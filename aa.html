@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="aa.css" rel="stylesheet" type="text/css">
+<title>c</title>
+
+</head>
+
+<body>
+  <div id="app" class="box">
+    <h2>填报人信息</h2>
+    <div class="information">
+      <div class="p1">
+        <span v-show="name==''">*</span><p>姓名：</p><input type="text" placeholder="请填写姓名" required v-model="name"><br/>
+      </div>
+      <hr>
+      <div class="p1">
+        <span v-show="phone==''">*</span><p>联系电话：</p><input type="text" placeholder="请填写联系电话" v-model="phone"><br/>
+      </div>
+      <hr>
+      <div class="p1">
+        <span v-show="company==''">*</span><p>所属单位：</p><input type="text" placeholder="请填写所属单位" v-model="company"><br/>
+      </div>
+    </div>
+    <h2>上报时间信息</h2>
+    <div class="information">
+      <div class="p1">
+        <span v-show="address==''">*</span><p>涉事地址：</p><input type="text" placeholder="请填写涉事地址" required v-model="address"><br/>
+      </div>
+      <hr>
+      <div class="p1">
+        <span v-show="content==''">*</span><p>上报内容：</p><input type="text" placeholder="请填写上报内容" v-model="content"><br/>
+      </div>
+      <hr>
+      <div class="p1">
+        <span v-show="name==''">*</span><p>现场图片：</p>
+        <img src="" width="50px" height="50px"/>
+        <input name="imgfile" type="file" accept="image/gif, image/jpeg"/><br/>
+      </div>
+    </div>
+    <div class="t1">
+      <input type="button" value="提交" @click="INIT">
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var app =new Vue({
+      el:'#app',
+      // methods:{
+      //   aa:function(){
+      //     alert('提交成功');
+      //   }
+      // },
+      data:{
+        message:'Hello vue!',
+        name:'',
+        phone:'',
+        company:'',
+        address:'',
+        content:''
+      },
+      methods:{
+        INIT:function(){
+          var aa=[this.name,this.phone,this.company,this.address,this.content]
+          alert(aa)
+        }
+      }
+    })
+    // var b=function(){
+    //   var c=app.data;
+    //   return c
+    // }
+    // alert(b())
+  </script>
+</body>
+</html>
